@@ -1,0 +1,31 @@
+<h2> <%= @fleet.name %> </h2>
+<%= link_to "Edit Fleet", edit_fleet_path(@fleet) if @owner %>    <%= link_to "Add Ships", fleet_ships_path(@fleet) if @owner %>
+<br>
+<table>
+  </tr>
+    <th> Ship Type</th>
+    <th> Ship Name </th>
+    <th> Total Cargo Hauled </th>
+    <th> Total Distance Traveled </th>
+    <th> Total Points </th>
+    <th> Release Ship </th>
+    <th> Voyage </th>
+  </tr>
+  <% Ship.sizes.each do |s| %>
+  <% ship = @ships.find_by(size: s) if @ships %>
+  <tr>
+    <td> <%= s %> </td>
+    <td>  <% if @owner %>
+            <%= link_to ship.name , fleet_ship_path(@fleet, ship) if ship %>
+          <% else %>
+            <%= ship.name if ship %>
+          <% end %>
+          </td>
+    <td> <%= ship.sum_cargo(@fleet) if ship %> </td>
+    <td> <%= ship.sum_distance(@fleet) if ship %> </td>
+    <td> <%= ship.points(@fleet) if ship %> </td>
+    <td> <%= link_to "Release" , fleet_ship_path(@fleet, ship), method:"delete" if ship && @owner %> </td>
+    <td> <%= link_to "Voyage", new_fleet_ship_voyage_path(@fleet, ship) if ship && @owner %> </td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,22 @@
+<br>
+<h3><%= @league.name %></h3>
+<% if is_admin?(@league) %>
+<%= link_to 'Delete League', league_path, method: "delete" %>
+<br>
+<% end %>
+<%= link_to 'Add Fleet', new_league_fleet_path(@league) if !@league.full?%>
+<br>
+<table>
+  <tr>
+    <th> Fleet Name </th>
+    <th> Fleet Owner </th>
+    <th> Points </th>
+  </tr>
+<% @fleets.each do |f| %>
+  <tr>
+    <td> <%= link_to f.name, fleet_path(f) %> </td>
+    <td> <%= link_to f.user.username, user_path(f.user) %> </td>
+    <td> <%= f.points %> </td>
+  </tr>
+<% end %>
+</table>

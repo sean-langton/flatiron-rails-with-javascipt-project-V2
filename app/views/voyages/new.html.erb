@@ -1,0 +1,26 @@
+<% if @voyage.errors.any? %>
+  <%= pluralize(@voyage.errors.count, "error") %> prevent this voyage from being updated:
+  <ul>
+  <% @voyage.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<br>
+<h3> Ship Name: <%= @voyage.ship.name %> </h3>
+<h4> Fleet Name: <%= @voyage.fleet.name %> </h3>
+<%= form_for @voyage do |f| %>
+<%= f.label "Departure Port:" %><br>
+<%= f.text_field :dep_port %><br>
+<%= f.label "Arrival Port:" %><br>
+<%= f.text_field :arr_port %><br>
+<%= f.label "Cargo" %><br>
+<%= f.number_field :cargo %><br>
+Max Cargo for this ship is <%= @ship.max_cargo %><br>
+<%= f.label "Distance" %><br>
+<%= f.number_field :distance %><br>
+Max Distance for this ship is <%= @ship.max_distance %><br>
+<%= f.hidden_field :ship_id %>
+<%= f.hidden_field :fleet_id %>
+<%= f.submit %>
+<% end %>

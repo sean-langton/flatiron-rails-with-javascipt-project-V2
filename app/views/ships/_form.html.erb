@@ -1,0 +1,20 @@
+<% if @ship.errors.any? %>
+  <%= pluralize(@ship.errors.count, "error") %> prevent this ship from being updated:
+  <ul>
+  <% @ship.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<br>
+<%= form_for @ship do |f| %>
+<%= f.label "Ship name:" %><br>
+<%= f.text_field :name %><br>
+<%= f.label "Size" %><br>
+<%= f.select :size, options_for_select(Ship.sizes) %><br>
+<%= f.label "Max Cargo (DWT)" %><br>
+<%= f.number_field :max_cargo %><br>
+<%= f.label "Max Distance (In Miles)" %><br>
+<%= f.number_field :max_distance %><br>
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlatironRailsProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-wrapper">
+        <div class="logo">
+          <div class="logo-title">
+            Fantasy Fleets
+          </div>
+          <div class="logo-subtitle">
+            Fantasy Sports...But With Boats
+          </div>
+        </div>
+        <% if logged_in %>
+          <div class="navbar" id="logged-in">
+            <%= link_to 'Home', root_url %>
+            <%= link_to 'Log Out', sessions_destroy_path, method: "delete" %>
+            <%= link_to 'My Profile', user_path(current_user) %>
+            <%= link_to "View Leagues", leagues_path %>
+            <%= link_to "New League", new_league_path %>
+            <%= link_to "New Ship", new_ship_path %>
+        <% else %>
+          <div class="navbar" id="logged-out">
+            <%= link_to 'Home', root_url %>
+            <%= link_to 'Log In', login_path %>
+            <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <%= flash[:notice] if flash[:notice] %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

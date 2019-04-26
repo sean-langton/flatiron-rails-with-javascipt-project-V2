@@ -1,0 +1,14 @@
+<h3> 5 Most Recent Voyages </h3>
+<ol>
+  <% @voyages.each do |v| %>
+  <li>
+    <%= v.dep_port %> to <%= v.arr_port %>
+    <ul>
+      <li> Distance: <%= v.distance %> miles </li>
+      <li> Ship: <%= Ship.find(v.ship_id).name %> </li>
+      <li> Fleet: <%= Fleet.find(v.fleet_id).name %> </li>
+      <li> <%= v.created_at.strftime("Created on %F %T") %> </li>
+    </ul>
+  </li>
+  <% end %>
+</ol>

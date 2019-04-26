@@ -1,0 +1,32 @@
+<%= form_tag('/ships', method: :get) do %>
+  <%= submit_tag "Order by Weight" %>
+  <%= hidden_field_tag 'order_by', 'true' %>
+<% end %>
+<table>
+<tr>
+  <th> Boat Name </th>
+  <th> Boat Type </th>
+  <th> Maximum Cargo </th>
+  <th> Maximum Distance </th>
+  <% if @fleet %>
+  <th> Add Boat </th>
+  <% end %>
+</tr>
+<% @ships.each do |s| %>
+  <tr>
+    <td> <%= link_to s.name, ship_path(s) %> </td>
+    <td> <%= s.size %> </td>
+    <td> <%= s.max_cargo %> </td>
+    <td> <%= s.max_distance %> </td>
+    <% if @fleet %>
+    <td>
+      <% if s.available(@fleet) %>
+        <%= link_to "Add Ship To Fleet", fleet_ship_path(@fleet, s), method: "patch" %>
+      <% else %>
+        Unavailible
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+<% end %>
+</table>

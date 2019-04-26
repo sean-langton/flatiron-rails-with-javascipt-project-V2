@@ -1,0 +1,20 @@
+<% if @user.errors.any? %>
+  <%= pluralize(@user.errors.count, "error") %> prevent this user from being created:
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<br>
+<%= form_for @user do |f| %>
+<%= f.label "Username:" %><br>
+<%= f.text_field :username %><br>
+<%= f.label "Email Address:" %><br>
+<%= f.text_field :email %><br>
+<%= f.label "Password:" %><br>
+<%= f.password_field :password %><br>
+<%= f.submit %>
+<% end %>
+<br>
+<%= link_to('Or Sign Up with Facebook!', '/auth/facebook') %>

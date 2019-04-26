@@ -1,0 +1,21 @@
+<br>
+<% if @owner %>
+  <h3> Your Fleet </h3>
+<% else %>
+<h3> Captain <%= @index.username %>'s Fleet </h3>
+<% end %>
+<br>
+<table>
+  </tr>
+    <th> </th>
+    <th> Fleet Name </th>
+    <th> League Name</th>
+  </tr>
+  <% @fleets.each_with_index do |f, index| %>
+    <tr>
+      <td> <%= index+1 %>. </td>
+      <td> <%= link_to f.name, fleet_path(f) %> </td>
+      <td> <%= link_to f.league.name, league_path(f.league) %> </td>
+    </tr>
+  <% end %>
+</table>

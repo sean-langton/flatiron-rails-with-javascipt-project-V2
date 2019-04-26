@@ -1,0 +1,16 @@
+<% if @league.errors.any? %>
+  <%= pluralize(@league.errors.count, "error") %> prevent this leaguefrom being created:
+  <ul>
+  <% @league.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<br>
+<%= form_for @league do |f| %>
+<%= f.label "League name:" %><br>
+<%= f.text_field :name %><br>
+<%= f.label "Number of Fleets (Between 1-12):" %><br>
+<%= f.number_field :num_of_fleets %><br>
+<%= f.submit %>
+<% end %>

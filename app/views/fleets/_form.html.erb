@@ -1,0 +1,15 @@
+<% if @fleet.errors.any? %>
+  <%= pluralize(@fleet.errors.count, "error") %> prevent this fleet from being updated:
+  <ul>
+  <% @fleet.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<br>
+<%= form_for @fleet do |f| %>
+<%= f.hidden_field :league_id %>
+<%= f.label "Fleet name:" %><br>
+<%= f.text_field :name %><br>
+<%= f.submit %>
+<% end %>
