@@ -87011,3 +87011,314 @@ Processing by StaticController#index as HTML
 Completed 200 OK in 116ms (Views: 110.3ms | ActiveRecord: 1.1ms)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/seanlangton/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User 1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser1@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User 2"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser2@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User 3"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser3@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Test User 4"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser4@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mLeague Create (1.6ms)[0m  [1m[32mINSERT INTO "leagues" ("name", "num_of_fleets", "admin_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test League 1"], ["num_of_fleets", 4], ["admin_id", 1], ["created_at", "2019-04-26 03:43:17.251258"], ["updated_at", "2019-04-26 03:43:17.251258"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mLeague Create (0.7ms)[0m  [1m[32mINSERT INTO "leagues" ("name", "num_of_fleets", "admin_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test League 2"], ["num_of_fleets", 10], ["admin_id", 1], ["created_at", "2019-04-26 03:43:17.258792"], ["updated_at", "2019-04-26 03:43:17.258792"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.2ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.1ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/league_validator.rb:3
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "fleets" WHERE "fleets"."league_id" = ?[0m  [["league_id", 1]]
+  ↳ app/models/league.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.1ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.1ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/league_validator.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "fleets" WHERE "fleets"."league_id" = ?[0m  [["league_id", 1]]
+  ↳ app/models/league.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.1ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.1ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/league_validator.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "fleets" WHERE "fleets"."league_id" = ?[0m  [["league_id", 1]]
+  ↳ app/models/league.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.1ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.2ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/league_validator.rb:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "fleets" WHERE "fleets"."league_id" = ?[0m  [["league_id", 1]]
+  ↳ app/models/league.rb:11
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.2ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:52
+  [1m[36mLeague Load (0.2ms)[0m  [1m[34mSELECT  "leagues".* FROM "leagues" WHERE "leagues"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/validators/league_validator.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "fleets" WHERE "fleets"."league_id" = ?[0m  [["league_id", 2]]
+  ↳ app/models/league.rb:11
+  [1m[36mFleet Create (0.9ms)[0m  [1m[32mINSERT INTO "fleets" ("name", "league_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Test Fleet 5"], ["league_id", 2], ["user_id", 1], ["created_at", "2019-04-26 03:43:17.351364"], ["updated_at", "2019-04-26 03:43:17.351364"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Create (0.6ms)[0m  [1m[32mINSERT INTO "ships" ("name", "size", "max_cargo", "max_distance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Boaty McBoatFace"], ["size", "Handymax"], ["max_cargo", 1000], ["max_distance", 500], ["created_at", "2019-04-26 03:43:17.395973"], ["updated_at", "2019-04-26 03:43:17.395973"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Create (0.6ms)[0m  [1m[32mINSERT INTO "ships" ("name", "size", "max_cargo", "max_distance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "The Skipper"], ["size", "Handy Size"], ["max_cargo", 500], ["max_distance", 250], ["created_at", "2019-04-26 03:43:17.406083"], ["updated_at", "2019-04-26 03:43:17.406083"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Create (0.7ms)[0m  [1m[32mINSERT INTO "ships" ("name", "size", "max_cargo", "max_distance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "The Guarantee"], ["size", "Panamax"], ["max_cargo", 2000], ["max_distance", 750], ["created_at", "2019-04-26 03:43:17.410375"], ["updated_at", "2019-04-26 03:43:17.410375"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Create (0.5ms)[0m  [1m[32mINSERT INTO "ships" ("name", "size", "max_cargo", "max_distance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Too Big To Be a Fishing Boat"], ["size", "Neopanamax"], ["max_cargo", 3000], ["max_distance", 2000], ["created_at", "2019-04-26 03:43:17.414516"], ["updated_at", "2019-04-26 03:43:17.414516"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Create (0.7ms)[0m  [1m[32mINSERT INTO "ships" ("name", "size", "max_cargo", "max_distance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Yacht 3000"], ["size", "Capesize"], ["max_cargo", 5000], ["max_distance", 2500], ["created_at", "2019-04-26 03:43:17.418225"], ["updated_at", "2019-04-26 03:43:17.418225"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Create (0.4ms)[0m  [1m[32mINSERT INTO "ships" ("name", "size", "max_cargo", "max_distance", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "El Hefe"], ["size", "Chinamax"], ["max_cargo", 9000], ["max_distance", 3000], ["created_at", "2019-04-26 03:43:17.422791"], ["updated_at", "2019-04-26 03:43:17.422791"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mShip Load (0.3ms)[0m  [1m[34mSELECT "ships".* FROM "ships"[0m
+  ↳ db/seeds.rb:59
+  [1m[36mFleet Load (0.3ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 1], ["created_at", "2019-04-26 03:43:17.469390"], ["updated_at", "2019-04-26 03:43:17.469390"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 2], ["created_at", "2019-04-26 03:43:17.487462"], ["updated_at", "2019-04-26 03:43:17.487462"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.3ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 3], ["created_at", "2019-04-26 03:43:17.496259"], ["updated_at", "2019-04-26 03:43:17.496259"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 4], ["created_at", "2019-04-26 03:43:17.503844"], ["updated_at", "2019-04-26 03:43:17.503844"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.4ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 5], ["created_at", "2019-04-26 03:43:17.511302"], ["updated_at", "2019-04-26 03:43:17.511302"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.3ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.5ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 6], ["created_at", "2019-04-26 03:43:17.520204"], ["updated_at", "2019-04-26 03:43:17.520204"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.3ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.5ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 7], ["created_at", "2019-04-26 03:43:17.525949"], ["updated_at", "2019-04-26 03:43:17.525949"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.8ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 8], ["created_at", "2019-04-26 03:43:17.532919"], ["updated_at", "2019-04-26 03:43:17.532919"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.8ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 9], ["created_at", "2019-04-26 03:43:17.540616"], ["updated_at", "2019-04-26 03:43:17.540616"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.9ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 10], ["created_at", "2019-04-26 03:43:17.552036"], ["updated_at", "2019-04-26 03:43:17.552036"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.3ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.8ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 11], ["created_at", "2019-04-26 03:43:17.569484"], ["updated_at", "2019-04-26 03:43:17.569484"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.3ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (1.8ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 12], ["created_at", "2019-04-26 03:43:17.590267"], ["updated_at", "2019-04-26 03:43:17.590267"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" ORDER BY "fleets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mVoyage Create (0.6ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 1], ["ship_id", 13], ["created_at", "2019-04-26 03:43:17.603928"], ["updated_at", "2019-04-26 03:43:17.603928"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mFleet Load (0.7ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" WHERE "fleets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mShip Load (0.3ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" ORDER BY "ships"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fleet_id", 2], ["ship_id", 1], ["created_at", "2019-04-26 03:43:17.617844"], ["updated_at", "2019-04-26 03:43:17.617844"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mFleet Load (0.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" WHERE "fleets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mShip Load (0.9ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" WHERE "ships"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mShip Load (0.1ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" WHERE "ships"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/capacity_validator.rb:3
+  [1m[36mShip Load (0.1ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" WHERE "ships"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/capacity_validator.rb:6
+  [1m[36mVoyage Create (0.7ms)[0m  [1m[32mINSERT INTO "voyages" ("dep_port", "arr_port", "distance", "cargo", "fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["dep_port", "New York"], ["arr_port", "London"], ["distance", 200], ["cargo", 100], ["fleet_id", 1], ["ship_id", 1], ["created_at", "2019-04-26 03:43:17.650879"], ["updated_at", "2019-04-26 03:43:17.650879"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:66
+  [1m[36mFleet Load (2.2ms)[0m  [1m[34mSELECT  "fleets".* FROM "fleets" WHERE "fleets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mShip Load (0.1ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" WHERE "ships"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:66
+  [1m[36mShip Load (0.1ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" WHERE "ships"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/capacity_validator.rb:3
+  [1m[36mShip Load (0.1ms)[0m  [1m[34mSELECT  "ships".* FROM "ships" WHERE "ships"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/validators/capacity_validator.rb:6
+  [1m[36mVoyage Create (0.5ms)[0m  [1m[32mINSERT INTO "voyages" ("dep_port", "arr_port", "distance", "cargo", "fleet_id", "ship_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["dep_port", "Los Angeles"], ["arr_port", "Tokyo"], ["distance", 200], ["cargo", 100], ["fleet_id", 2], ["ship_id", 1], ["created_at", "2019-04-26 03:43:17.671832"], ["updated_at", "2019-04-26 03:43:17.671832"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:66
+Started GET "/leagues" for 127.0.0.1 at 2019-04-25 23:43:55 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/seanlangton/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LeaguesController#index as HTML
+  Rendering leagues/index.html.erb within layouts/application
+  [1m[36mLeague Load (0.7ms)[0m  [1m[34mSELECT "leagues".* FROM "leagues"[0m
+  ↳ app/views/leagues/index.html.erb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/leagues_helper.rb:4
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/leagues_helper.rb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/leagues_helper.rb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/leagues_helper.rb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/leagues_helper.rb:4
+  Rendered leagues/index.html.erb within layouts/application (70.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:8
+Completed 200 OK in 737ms (Views: 680.8ms | ActiveRecord: 3.9ms)
+
+
