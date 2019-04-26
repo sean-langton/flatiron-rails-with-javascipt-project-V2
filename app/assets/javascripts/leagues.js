@@ -1,11 +1,17 @@
 class League {
-  constructor(name,numOfFleets,leagueAdmin) {
+  constructor(id,name,numOfFleets) {
+    this.id = id
     this.name = name
     this.numOfFleets = numOfFleets
-    this.leagueAdmin = leagueAdmin
   }
 };
 
-$(document).ready(function() {
-  $("p").append("<b>Appended text</b>")
-});
+$(function() {
+    $.get("/leagues.json", function(data) {
+    data.forEach(function (league) {
+      let newFleet = new League(league["id"],league["name"],league["num_of_fleets"])
+      let fleetLink = newFleet["name"].link(window.location.protocol + "//" + window.location.host + "/leagues/" + newFleet["id"])
+      $("#js").append('<tr><td>'+ fleetLink + '</td><td>' + newFleet["numOfFleets"] + '</tr>')
+    });
+    });
+  });

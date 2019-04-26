@@ -1,19 +1,4 @@
 <br>
-<table>
-  <tr>
-    <th> League Name </th>
-    <th> Size </th>
-    <th> Admin </th>
-  </tr>
-  <% @leagues.each do |l| %>
-    <tr>
-      <td> <%= link_to l.name, league_path(l) %> </td>
-      <td> <%= l.num_of_fleets %> </td>
-      <td> <%= admin(l).username %> </td>
-    </tr>
-  <% end %>
-</table>
-
 <table id="js">
   <tr>
     <th> League Name </th>
@@ -21,7 +6,3 @@
     <th> Admin </th>
   </tr>
 </table>
-
-<div id="testing">
-  <p> This is the testing div</p>
-</div>
