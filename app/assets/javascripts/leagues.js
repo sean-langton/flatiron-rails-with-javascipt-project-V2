@@ -4,5 +4,8 @@ class League {
     this.numOfFleets = numOfFleets
     this.leagueAdmin = leagueAdmin
   }
+};
 
-}
+$(document).ready(function() {
+  $("p").append("<b>Appended text</b>")
+});
