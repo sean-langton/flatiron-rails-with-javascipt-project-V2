@@ -17,6 +17,10 @@ class ShipsController < ApplicationController
     else
       @voyages = Voyage.all.where(ship_id: @ship).where.not(dep_port: [nil, ""])
     end
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @ship}
+    end
   end
 
   def update

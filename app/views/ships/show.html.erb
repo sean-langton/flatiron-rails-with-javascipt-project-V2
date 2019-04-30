@@ -1,22 +1,15 @@
-<h1> <%= @ship.name %> </h1>
-<h3> <%= @fleet.name if @fleet %> </h3>
+<h1 id="shipName"> </h1>
 <ul>
-  <li> Size: <%=@ship.size %> </li>
-  <li> Maximum Cargo: <%=@ship.max_cargo %> </li>
-  <li> Maximum Distance: <%=@ship.max_distance %> </li>
+  <li id="size"> Size: </li>
+  <li id="maxCargo"> Maximum Cargo: </li>
+  <li id="maxDistance"> Maximum Distance: </li>
 </ul>
-<% if @voyages != [] %>
 <h4> Voyages </h4>
-<ul>
-  <% @voyages.each do |voyage| %>
-    <li>
-      Voyage: <%= voyage.dep_port %> to <%= voyage.arr_port %>
-      <ul>
-        <li>
-          Fleet: <%= voyage.fleet.name %>
-        </li>
-      </ul>
-    </li>
-    <% end %>
-</ul>
-<% end %>
+<table id="voyages">
+  <tr>
+    <th> Departure Port </th>
+    <th> Arrival Port </th>
+    <th> Cargo </th>
+    <th> Distance </th>
+  </tr>
+</table>
