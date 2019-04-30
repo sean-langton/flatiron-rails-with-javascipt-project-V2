@@ -6,9 +6,9 @@ class League {
   }
 };
 
-$(function() {
-    $.get("/leagues.json", function(data) {
-    data.forEach(function (league) {
+$( document ).on('turbolinks:load', () => {
+    $.get("/leagues.json", (data) => {
+    data.forEach( (league) => {
       let newFleet = new League(league["id"],league["name"],league["num_of_fleets"])
       let fleetLink = newFleet["name"].link(window.location.protocol + "//" + window.location.host + "/leagues/" + newFleet["id"])
       $("#js").append('<tr><td>'+ fleetLink + '</td><td>' + newFleet["numOfFleets"] + '</tr>')
