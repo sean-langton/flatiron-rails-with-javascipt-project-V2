@@ -5,6 +5,20 @@ class Ship {
     this.size = size
     this.maxCargo = maxCargo
     this.maxDistance = maxDistance
+
+    this.voyages = []
+  }
+
+  summary() {
+    const cargoTotal = this.voyages.reduce( (prev, cur) => {
+      return prev + cur.cargo;
+    }, 0);
+
+    const distanceTotal = this.voyages.reduce( (prev, cur) => {
+      return prev + cur.distance;
+    }, 0);
+
+    return "This ship has carried a total of " + cargoTotal + " tons a total of " + distanceTotal + " miles."
   }
 };
 
@@ -20,7 +34,6 @@ class Voyage {
 
 $( document ).on('turbolinks:load', () => {
     $.get(window.location.pathname+".json", (data) => {
-      debugger;
       let newShip = new Ship(data["id"],data["name"],data["size"],data["max_cargo"],data["max_distance"])
       $("#shipName").append(newShip["name"])
       $("#size").append(newShip["size"])
@@ -29,8 +42,10 @@ $( document ).on('turbolinks:load', () => {
       data["voyages"].forEach( (voyage) => {
         let newVoyage = new Voyage(voyage["id"],voyage["dep_port"],voyage["arr_port"],voyage["cargo"],voyage["distance"])
         if (newVoyage["dep_port"] !== null) {
+          newShip["voyages"].push(newVoyage)
           $("#voyages").append('<tr><td>'+ newVoyage["dep_port"] + '</td><td>' + newVoyage["arr_port"] + '</td><td>' + newVoyage["cargo"] +'</td><td>' + newVoyage["distance"] + '</td></tr>')
         };
       });
+      $("#summary").append(newShip.summary());
     });
   });
