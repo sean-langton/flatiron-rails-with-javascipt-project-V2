@@ -27,8 +27,10 @@ $( document ).on('turbolinks:load', () => {
       $("#maxCargo").append(newShip["maxCargo"])
       $("#maxDistance").append(newShip["maxDistance"])
       data["voyages"].forEach( (voyage) => {
-        let newVoyage = new Voyage(voyage["dep_port"],voyage["arr_port"],voyage["distance"],voyage["cargo"])
-        $("#voyages").append('<tr><td>'+ newVoyage["dep_port"] + '</td><td>' + newVoyage["arr_port"] + '</td><td>' + newVoyage["distance"] +'</td><td>' + newVoyage["cargo"] + '</td></tr>')
+        let newVoyage = new Voyage(voyage["id"],voyage["dep_port"],voyage["arr_port"],voyage["cargo"],voyage["distance"])
+        if (newVoyage["dep_port"] !== null) {
+          $("#voyages").append('<tr><td>'+ newVoyage["dep_port"] + '</td><td>' + newVoyage["arr_port"] + '</td><td>' + newVoyage["cargo"] +'</td><td>' + newVoyage["distance"] + '</td></tr>')
+        };
       });
     });
   });
